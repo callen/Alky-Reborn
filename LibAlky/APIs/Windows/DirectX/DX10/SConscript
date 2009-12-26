@@ -1,0 +1,18 @@
+# Copyright 2007 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static', 'NuCore_static', 'NuGUI_static', 'NuRender_static', 'COM_static']
+
+if 'darwin' in sys.platform:
+    frameworks = ['OpenGL', 'SDL']
+else:
+    frameworks = ['GL', 'SDL']
+
+d3d_sources = ['D3D/D3D.c', 'D3D/Device.c', 'D3D/Effect.c', 'D3D/EffectPass.c', 'D3D/EffectTechnique.c', 'D3D/Texture.c']
+d3dx_sources = ['D3DX/D3DX.c', 'D3DX/Effect.c']
+dxgi_sources = ['DXGI/DXGI.c', 'DXGI/SwapChain.c']
+
+AlkyLib('d3d10', d3d_sources + d3dx_sources + dxgi_sources, FRAMEWORKS=frameworks, LIBS=libs)
+AlkyLib('d3dx10', d3d_sources + d3dx_sources + dxgi_sources, FRAMEWORKS=frameworks, LIBS=libs)

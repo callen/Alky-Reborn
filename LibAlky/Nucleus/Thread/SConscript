@@ -1,0 +1,14 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+import sys
+
+libs = ['NuContext', 'NuMemory_static']
+
+if not 'darwin' in sys.platform:
+	libs.append('pthread')
+
+AlkyLib('NuThread', ['Mutex.c', 'Thread.c'], LIBS=libs)
+
+# AlkyTest('Test')

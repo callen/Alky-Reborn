@@ -1,0 +1,142 @@
+LONG WINAPI RegEnumKeyA(HKEY hKey,DWORD dwIndex,LPSTR lpName,DWORD cbName);
+LONG WINAPI RegQueryValueA(HKEY hKey,LPCSTR lpSubKey,LPSTR lpValue,PLONG lpcbValue);
+LONG WINAPI RegCreateKeyExA(HKEY hKey,LPCSTR lpSubKey,DWORD Reserved,LPSTR lpClass,DWORD dwOptions,REGSAM samDesired,LPSECURITY_ATTRIBUTES lpSecurityAttributes,PHKEY phkResult,LPDWORD lpdwDisposition);
+LONG WINAPI RegCreateKeyA(HKEY hKey,LPCSTR lpSubKey,PHKEY phkResult);
+LONG WINAPI RegSetValueExA(HKEY hKey,LPCSTR lpValueName,DWORD Reserved,DWORD dwType,const BYTE *lpData,DWORD cbData);
+LONG WINAPI RegDeleteValueA(HKEY hKey,LPCSTR lpValueName);
+LONG WINAPI RegOpenKeyA(HKEY hKey,LPCSTR lpSubKey,PHKEY phkResult);
+BOOL WINAPI GetUserNameA(LPSTR lpBuffer,LPDWORD nSize);
+LONG WINAPI RegOpenKeyExA(HKEY hKey,LPCSTR lpSubKey,DWORD ulOptions,REGSAM samDesired,PHKEY phkResult);
+LONG WINAPI RegQueryValueExA(HKEY hKey,LPCSTR lpValueName,LPDWORD lpReserved,LPDWORD lpType,LPBYTE lpData,LPDWORD lpcbData);
+LONG WINAPI RegCloseKey(HKEY hKey);
+LONG WINAPI RegDeleteKeyA(HKEY hKey,LPCSTR lpSubKey);
+!COMCTL32.dll
+!DINPUT.dll
+HRESULT WINAPI DirectInputCreateA(HINSTANCE hinst,DWORD dwVersion,LPDIRECTINPUTA *ppDI,LPUNKNOWN punkOuter);
+!DSOUND.dll
+!GDI32.dll
+!GLU32.dll
+!KERNEL32.dll
+ATOM WINAPI GlobalFindAtomA(LPCSTR lpString);
+int WINAPI lstrcmpW(LPCWSTR lpString1,LPCWSTR lpString2);
+DWORD WINAPI GetFullPathNameA(LPCSTR lpFileName,DWORD nBufferLength,LPSTR lpBuffer,LPSTR *lpFilePart);
+BOOL WINAPI FindClose(HANDLE hFindFile);
+BOOL WINAPI DuplicateHandle(HANDLE hSourceProcessHandle,HANDLE hSourceHandle,HANDLE hTargetProcessHandle,LPHANDLE lpTargetHandle,DWORD dwDesiredAccess,BOOL bInheritHandle,DWORD dwOptions);
+DWORD WINAPI GetFileSize(HANDLE hFile,LPDWORD lpFileSizeHigh);
+BOOL WINAPI SetEndOfFile(HANDLE hFile);
+DWORD WINAPI GetModuleFileNameW(HMODULE hModule,LPWSTR lpFilename,DWORD nSize);
+BOOL WINAPI LockFile(HANDLE hFile,DWORD dwFileOffsetLow,DWORD dwFileOffsetHigh,DWORD nNumberOfBytesToLockLow,DWORD nNumberOfBytesToLockHigh);
+BOOL WINAPI FlushFileBuffers(HANDLE hFile);
+DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceToMoveHigh,DWORD dwMoveMethod);
+BOOL WINAPI WriteFile(HANDLE hFile,LPCVOID lpBuffer,DWORD nNumberOfBytesToWrite,LPDWORD lpNumberOfBytesWritten,LPOVERLAPPED lpOverlapped);
+BOOL WINAPI MoveFileA(LPCSTR lpExistingFileName,LPCSTR lpNewFileName);
+DWORD WINAPI WaitForMultipleObjects(DWORD nCount,const HANDLE *lpHandles,BOOL bWaitAll,DWORD dwMilliseconds);
+BOOL WINAPI TerminateThread(HANDLE hThread,DWORD dwExitCode);
+BOOL WINAPI GetExitCodeThread(HANDLE hThread,LPDWORD lpExitCode);
+LONG WINAPI InterlockedDecrement(LPLONG lpAddend);
+BOOL WINAPI UnlockFile(HANDLE hFile,DWORD dwFileOffsetLow,DWORD dwFileOffsetHigh,DWORD nNumberOfBytesToUnlockLow,DWORD nNumberOfBytesToUnlockHigh);
+ATOM WINAPI GlobalAddAtomA(LPCSTR lpString);
+int WINAPI lstrcmpA(LPCSTR lpString1,LPCSTR lpString2);
+BOOL WINAPI FindNextFileA(HANDLE hFindFile,LPWIN32_FIND_DATAA lpFindFileData);
+BOOL WINAPI FileTimeToSystemTime(const FILETIME *lpFileTime,LPSYSTEMTIME lpSystemTime);
+BOOL WINAPI FileTimeToLocalFileTime(const FILETIME *lpFileTime,LPFILETIME lpLocalFileTime);
+LONG WINAPI InterlockedIncrement(LPLONG lpAddend);
+LPVOID WINAPI TlsGetValue(DWORD dwTlsIndex);
+HGLOBAL WINAPI GlobalReAlloc(HGLOBAL hMem,DWORD dwBytes,UINT uFlags);
+DWORD TlsAlloc(void);
+__crtTlsAlloc(x);
+BOOL WINAPI TlsSetValue(DWORD dwTlsIndex,LPVOID lpTlsValue);
+HLOCAL WINAPI LocalReAlloc(HLOCAL hMem,UINT uBytes,UINT uFlags);
+void WINAPI DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+BOOL WINAPI TlsFree(DWORD dwTlsIndex);
+UINT WINAPI GlobalFlags(HGLOBAL hMem);
+UINT WINAPI WinExec(LPCSTR lpCmdLine,UINT uCmdShow);
+void WINAPI Sleep(DWORD dwMilliseconds);
+BOOL WINAPI GetFileTime(HANDLE hFile,LPFILETIME lpCreationTime,LPFILETIME lpLastAccessTime,LPFILETIME lpLastWriteTime);
+void WINAPI RaiseException(DWORD dwExceptionCode,DWORD dwExceptionFlags,DWORD nNumberOfArguments,const DWORD *lpArguments);
+BOOL WINAPI GetProcessAffinityMask(HANDLE hProcess,LPDWORD lpProcessAffinityMask,LPDWORD lpSystemAffinityMask);
+HANDLE GetCurrentProcess(void);
+void WINAPI GetSystemInfo(LPSYSTEM_INFO lpSystemInfo);
+BOOL WINAPI GetFileInformationByHandle(HANDLE hFile,LPBY_HANDLE_FILE_INFORMATION lpFileInformation);
+LPVOID WINAPI HeapReAlloc(HANDLE hHeap,DWORD dwFlags,LPVOID lpMem,DWORD dwBytes);
+DWORD WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,DWORD dwLength);
+LONG WINAPI UnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo);
+LPTOP_LEVEL_EXCEPTION_FILTER WINAPI SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
+BOOL WINAPI TerminateProcess(HANDLE hProcess,UINT uExitCode);
+BOOL IsDebuggerPresent(void);
+BOOL WINAPI WriteConsoleA(HANDLE hConsoleOutput,const void *lpBuffer,DWORD nNumberOfCharsToWrite,LPDWORD lpNumberOfCharsWritten,LPVOID lpReserved);
+BOOL WINAPI WriteConsoleW(HANDLE hConsoleOutput,const void *lpBuffer,DWORD nNumberOfCharsToWrite,LPDWORD lpNumberOfCharsWritten,LPVOID lpReserved);
+BOOL WINAPI SetStdHandle(DWORD nStdHandle,HANDLE hHandle);
+BOOL WINAPI VirtualFree(LPVOID lpAddress,DWORD dwSize,DWORD dwFreeType);
+BOOL WINAPI HeapDestroy(HANDLE hHeap);
+BOOL WINAPI GetStringTypeA(LCID Locale,DWORD dwInfoType,LPCSTR lpSrcStr,int cchSrc,LPWORD lpCharType);
+BOOL WINAPI GetStringTypeW(DWORD dwInfoType,LPCWSTR lpSrcStr,int cchSrc,LPWORD lpCharType);
+BOOL WINAPI SetThreadPriority(HANDLE hThread,int nPriority);
+HANDLE WINAPI CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes,DWORD dwStackSize,LPTHREAD_START_ROUTINE lpStartAddress,LPVOID lpParameter,DWORD dwCreationFlags,LPDWORD lpThreadId);
+HANDLE WINAPI CreateEventA(LPSECURITY_ATTRIBUTES lpEventAttributes,BOOL bManualReset,BOOL bInitialState,LPCSTR lpName);
+DWORD WINAPI WaitForSingleObject(HANDLE hHandle,DWORD dwMilliseconds);
+BOOL WINAPI SetEvent(HANDLE hEvent);
+HANDLE GetCurrentThread(void);
+void WINAPI SetLastError(DWORD dwErrCode);
+BOOL WINAPI WritePrivateProfileStringA(LPCSTR lpAppName,LPCSTR lpKeyName,LPCSTR lpString,LPCSTR lpFileName);
+HGLOBAL WINAPI GlobalHandle(LPCVOID pMem);
+DWORD WINAPI GetPrivateProfileStringA(LPCSTR lpAppName,LPCSTR lpKeyName,LPCSTR lpDefault,LPSTR lpReturnedString,DWORD nSize,LPCSTR lpFileName);
+UINT WINAPI GetPrivateProfileIntA(LPCSTR lpAppName,LPCSTR lpKeyName,INT nDefault,LPCSTR lpFileName);
+DWORD WINAPI GetCurrentDirectoryA(DWORD nBufferLength,LPSTR lpBuffer);
+HFILE WINAPI OpenFile(LPCSTR lpFileName,LPOFSTRUCT lpReOpenBuff,UINT uStyle);
+UINT WINAPI GlobalGetAtomNameA(ATOM nAtom,LPSTR lpBuffer,int nSize);
+ATOM WINAPI GlobalDeleteAtom(ATOM nAtom);
+HANDLE WINAPI FindFirstFileA(LPCSTR lpFileName,LPWIN32_FIND_DATAA lpFindFileData);
+DWORD WINAPI GetFileAttributesA(LPCSTR lpFileName);
+BOOL WINAPI CreateDirectoryA(LPCSTR lpPathName,LPSECURITY_ATTRIBUTES lpSecurityAttributes);
+BOOL WINAPI SetFileAttributesA(LPCSTR lpFileName,DWORD dwFileAttributes);
+BOOL WINAPI DeleteFileA(LPCSTR lpFileName);
+HRSRC WINAPI FindResourceA(HMODULE hModule,LPCSTR lpName,LPCSTR lpType);
+HGLOBAL WINAPI LoadResource(HMODULE hModule,HRSRC hResInfo);
+LPVOID WINAPI LockResource(HGLOBAL hResData);
+DWORD WINAPI SizeofResource(HMODULE hModule,HRSRC hResInfo);
+BOOL WINAPI GetStringTypeExA(LCID Locale,DWORD dwInfoType,LPCSTR lpSrcStr,int cchSrc,LPWORD lpCharType);
+int WINAPI lstrlenA(LPCSTR lpString);
+int WINAPI lstrcmpiA(LPCSTR lpString1,LPCSTR lpString2);
+int WINAPI CompareStringW(LCID Locale,DWORD dwCmpFlags,LPCWSTR lpString1,int cchCount1,LPCWSTR lpString2,int cchCount2);
+int WINAPI CompareStringA(LCID Locale,DWORD dwCmpFlags,LPCSTR lpString1,int cchCount1,LPCSTR lpString2,int cchCount2);
+LONG WINAPI InterlockedExchange(LPLONG Target,LONG Value);
+BOOL WINAPI VirtualUnlock(LPVOID lpAddress,DWORD dwSize);
+BOOL WINAPI VirtualLock(LPVOID lpAddress,DWORD dwSize);
+void WINAPI InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+HANDLE WINAPI CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes,BOOL bInitialOwner,LPCSTR lpName);
+BOOL WINAPI CreateProcessA(LPCSTR lpApplicationName,LPSTR lpCommandLine,LPSECURITY_ATTRIBUTES lpProcessAttributes,LPSECURITY_ATTRIBUTES lpThreadAttributes,BOOL bInheritHandles,DWORD dwCreationFlags,LPVOID lpEnvironment,LPCSTR lpCurrentDirectory,LPSTARTUPINFOA lpStartupInfo,LPPROCESS_INFORMATION lpProcessInformation);
+HANDLE WINAPI CreateWaitableTimerA(LPSECURITY_ATTRIBUTES lpTimerAttributes,BOOL bManualReset,LPCSTR lpTimerName);
+BOOL WINAPI SetWaitableTimer(HANDLE hTimer,const LARGE_INTEGER *lpDueTime,LONG lPeriod,PTIMERAPCROUTINE pfnCompletionRoutine,LPVOID lpArgToCompletionRoutine,BOOL fResume);
+BOOL WINAPI FreeLibrary(HMODULE hLibModule);
+DWORD WINAPI FormatMessageA(DWORD dwFlags,LPCVOID lpSource,DWORD dwMessageId,DWORD dwLanguageId,LPSTR lpBuffer,DWORD nSize,va_list *Arguments);
+HGLOBAL WINAPI GlobalAlloc(UINT uFlags,DWORD dwBytes);
+LPSTR WINAPI lstrcpyA(LPSTR lpString1,LPCSTR lpString2);
+HGLOBAL WINAPI GlobalFree(HGLOBAL hMem);
+LPVOID WINAPI GlobalLock(HGLOBAL hMem);
+DWORD WINAPI GlobalSize(HGLOBAL hMem);
+BOOL WINAPI GlobalUnlock(HGLOBAL hMem);
+void WINAPI OutputDebugStringA(LPCSTR lpOutputString);
+void WINAPI LeaveCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+BOOL WINAPI TryEnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+void WINAPI EnterCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
+BOOL WINAPI ResetEvent(HANDLE hEvent);
+!OLEACC.dll
+!OLEAUT32.dll
+!OPENGL32.dll
+!SHELL32.dll
+!SHLWAPI.dll
+!USER32.dll
+!VERSION.dll
+!WINMM.dll
+BOOL WINAPI PlaySoundA(LPCSTR pszSound,HMODULE hmod,DWORD fdwSound);
+DWORD timeGetTime(void);
+MMRESULT WINAPI timeBeginPeriod(UINT uPeriod);
+MMRESULT WINAPI timeEndPeriod(UINT uPeriod);
+!WINSPOOL.DRV
+!WS2_32.dll
+void WINAPI WSASetLastError(int iError);
+!WSOCK32.dll
+!comdlg32.dll
+!iphlpapi.dll
+!ole32.dll

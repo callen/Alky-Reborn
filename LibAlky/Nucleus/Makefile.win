@@ -1,0 +1,64 @@
+# Project: Nucleus
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Core/Import.o Core/Core.o Memory/TLS.o Memory/Heap.o Memory/Memory.o Render/Texture.o Render/Camera.o Render/Device.o Render/Geometry.o Render/Math.o Render/Shader.o $(RES)
+LINKOBJ  = Core/Import.o Core/Core.o Memory/TLS.o Memory/Heap.o Memory/Memory.o Render/Texture.o Render/Camera.o Render/Device.o Render/Geometry.o Render/Math.o Render/Shader.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" --export-all-symbols --add-stdcall-alias -LContext/ -lNuContext -lopengl32 -lglu32 -mrtd -lgdi32  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ../../../../../../../WINDOWS/system32/Nucleus.dll
+CXXFLAGS = $(CXXINCS) -mrtd  
+CFLAGS = $(INCS) -mrtd  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../../WINDOWS/system32/Nucleus.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=../../../../../../../WINDOWS/system32/libNucleus.def
+STATICLIB=../../../../../../../WINDOWS/system32/libNucleus.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+Core/Import.o: Core/Import.c
+	$(CC) -c Core/Import.c -o Core/Import.o $(CFLAGS)
+
+Core/Core.o: Core/Core.c
+	$(CC) -c Core/Core.c -o Core/Core.o $(CFLAGS)
+
+Memory/TLS.o: Memory/TLS.c
+	$(CC) -c Memory/TLS.c -o Memory/TLS.o $(CFLAGS)
+
+Memory/Heap.o: Memory/Heap.c
+	$(CC) -c Memory/Heap.c -o Memory/Heap.o $(CFLAGS)
+
+Memory/Memory.o: Memory/Memory.c
+	$(CC) -c Memory/Memory.c -o Memory/Memory.o $(CFLAGS)
+
+Render/Texture.o: Render/Texture.c
+	$(CC) -c Render/Texture.c -o Render/Texture.o $(CFLAGS)
+
+Render/Camera.o: Render/Camera.c
+	$(CC) -c Render/Camera.c -o Render/Camera.o $(CFLAGS)
+
+Render/Device.o: Render/Device.c
+	$(CC) -c Render/Device.c -o Render/Device.o $(CFLAGS)
+
+Render/Geometry.o: Render/Geometry.c
+	$(CC) -c Render/Geometry.c -o Render/Geometry.o $(CFLAGS)
+
+Render/Math.o: Render/Math.c
+	$(CC) -c Render/Math.c -o Render/Math.o $(CFLAGS)
+
+Render/Shader.o: Render/Shader.c
+	$(CC) -c Render/Shader.c -o Render/Shader.o $(CFLAGS)

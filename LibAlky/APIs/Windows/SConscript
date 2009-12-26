@@ -1,0 +1,25 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+SConscript(
+	[
+		'Core/SConscript',
+		'AdvApi32/SConscript',
+		'COM/SConscript',
+		'DirectX/SConscript',
+		'GDI32/SConscript',
+		'GLU32/SConscript',
+		'GLUT32/SConscript',
+		'IPHlpApi/SConscript',
+		'OLE32/SConscript',
+		'OLEAUT32/SConscript',
+		'OpenAL32/SConscript',
+		'OpenGL32/SConscript',
+		'Shell32/SConscript',
+		'User32/SConscript',
+		'Version/SConscript',
+		'WinMM/SConscript',
+		'WSock32/SConscript',
+		'Kernel32/SConscript',
+	]
+)

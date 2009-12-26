@@ -1,0 +1,167 @@
+Read 13002 entries from the function database
+/Users/daeken/Desktop/Documentation/Include/MsiQuery.h:
+WINAPI int MsiProcessMessage(MSIHANDLE hInstall, INSTALLMESSAGE eMessageType, MSIHANDLE hRecord);
+
+/Users/daeken/Desktop/Documentation/Include/Imm.h:
+WINAPI BOOL ImmIsUIMessageA(IN HWND, IN UINT, IN WPARAM, IN LPARAM);
+WINAPI BOOL ImmIsUIMessageW(IN HWND, IN UINT, IN WPARAM, IN LPARAM);
+
+/Users/daeken/Desktop/Documentation/Include/Sspi.h:
+SECURITY_STATUS SEC_ENTRY DecryptMessage(PCtxtHandle phContext, PSecBufferDesc pMessage, unsigned long MessageSeqNo, unsigned long * pfQOP);
+SECURITY_STATUS SEC_ENTRY EncryptMessage(PCtxtHandle phContext, unsigned long fQOP, PSecBufferDesc pMessage, unsigned long MessageSeqNo);
+
+/Users/daeken/Desktop/Documentation/Include/ShellAPI.h:
+int _cdecl ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, LPCWSTR lpcText, LPCWSTR lpcTitle, UINT fuStyle, ...);
+int _cdecl ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, LPCSTR lpcText, LPCSTR lpcTitle, UINT fuStyle, ...);
+
+/Users/daeken/Desktop/Documentation/Include/msimcsdk.h:
+void __RPC_STUB IMSIMHost_PopupMessage_Stub(IRpcStubBuffer *This, IRpcChannelBuffer *_pRpcChannelBuffer, PRPC_MESSAGE _pRpcMessage, DWORD *_pdwStubPhase);
+HRESULT STDMETHODCALLTYPE IMSIMHost_PopupMessage_Proxy(IMSIMHost __RPC_FAR * This, BSTR bstrMessage, long nTimeout, VARIANT_BOOL fClick, long __RPC_FAR *plCookie);
+
+/Users/daeken/Desktop/Documentation/Include/Tapi.h:
+WINAPI LONG lineGetStatusMessages(HLINE hLine, LPDWORD lpdwLineStates, LPDWORD lpdwAddressStates);
+WINAPI LONG lineGetMessage(HLINEAPP hLineApp, LPLINEMESSAGE lpMessage, DWORD dwTimeout);
+WINAPI LONG phoneSetStatusMessages(HPHONE hPhone, DWORD dwPhoneStates, DWORD dwButtonModes, DWORD dwButtonStates);
+WINAPI LONG lineProxyMessage(HLINE hLine, HCALL hCall, DWORD dwMsg, DWORD dwParam1, DWORD dwParam2, DWORD dwParam3);
+WINAPI LONG lineSetStatusMessages(HLINE hLine, DWORD dwLineStates, DWORD dwAddressStates);
+WINAPI LONG phoneGetStatusMessages(HPHONE hPhone, LPDWORD lpdwPhoneStates, LPDWORD lpdwButtonModes, LPDWORD lpdwButtonStates);
+WINAPI LONG phoneGetMessage(HPHONEAPP hPhoneApp, LPPHONEMESSAGE lpMessage, DWORD dwTimeout);
+
+/Users/daeken/Desktop/Documentation/Include/CeLib.h:
+VOID ceInitErrorMessageText(IN HMODULE hMod, IN DWORD idsUnexpected, IN DWORD idsUnknownErrorCode);
+WCHAR const * ceGetErrorMessageText(IN HRESULT hr, IN BOOL fHResultString);
+WCHAR const * ceGetErrorMessageTextEx(IN HRESULT hr, IN BOOL fHResultString, IN OPTIONAL WCHAR const * const *papwszInsertionText);
+
+/Users/daeken/Desktop/Documentation/Include/Vfw.h:
+LRESULT VFWAPI ICSendMessage(IN HIC hic, IN UINT msg, IN DWORD_PTR dw1, IN DWORD_PTR dw2);
+LRESULT VFWAPIV ICMessage(HIC hic, UINT msg, UINT cb, ...);
+
+/Users/daeken/Desktop/Documentation/Include/TSPI.h:
+LONG TSPIAPI TSPI_lineSetStatusMessages(HDRVLINE hdLine, DWORD dwLineStates, DWORD dwAddressStates);
+LONG TSPIAPI TSPI_phoneSetStatusMessages(HDRVPHONE hdPhone, DWORD dwPhoneStates, DWORD dwButtonModes, DWORD dwButtonStates);
+
+/Users/daeken/Desktop/Documentation/Include/WinDNS.h:
+WINAPI DNS_STATUS DnsExtractRecordsFromMessage_UTF8(IN PDNS_MESSAGE_BUFFER pDnsBuffer, IN WORD wMessageLength, OUT PDNS_RECORD * ppRecord);
+WINAPI DNS_STATUS DnsExtractRecordsFromMessage_W(IN PDNS_MESSAGE_BUFFER pDnsBuffer, IN WORD wMessageLength, OUT PDNS_RECORD * ppRecord);
+
+/Users/daeken/Desktop/Documentation/Include/WinCrypt.h:
+WINAPI WINCRYPT32API BOOL CryptVerifyMessageSignatureWithKey(IN PCRYPT_KEY_VERIFY_MESSAGE_PARA pVerifyPara, IN OPTIONAL PCERT_PUBLIC_KEY_INFO pPublicKeyInfo, IN const BYTE *pbSignedBlob, IN DWORD cbSignedBlob, OUT OPTIONAL BYTE *pbDecoded, IN OUT OPTIONAL DWORD *pcbDecoded);
+WINAPI WINCRYPT32API BOOL CryptDecryptAndVerifyMessageSignature(IN PCRYPT_DECRYPT_MESSAGE_PARA pDecryptPara, IN PCRYPT_VERIFY_MESSAGE_PARA pVerifyPara, IN DWORD dwSignerIndex, IN const BYTE *pbEncryptedBlob, IN DWORD cbEncryptedBlob, OUT OPTIONAL BYTE *pbDecrypted, IN OUT OPTIONAL DWORD *pcbDecrypted, OUT OPTIONAL PCCERT_CONTEXT *ppXchgCert, OUT OPTIONAL PCCERT_CONTEXT *ppSignerCert);
+WINAPI WINCRYPT32API BOOL CryptEncryptMessage(IN PCRYPT_ENCRYPT_MESSAGE_PARA pEncryptPara, IN DWORD cRecipientCert, IN PCCERT_CONTEXT rgpRecipientCert[], IN const BYTE *pbToBeEncrypted, IN DWORD cbToBeEncrypted, OUT BYTE *pbEncryptedBlob, IN OUT DWORD *pcbEncryptedBlob);
+WINAPI WINCRYPT32API BOOL CryptVerifyMessageSignature(IN PCRYPT_VERIFY_MESSAGE_PARA pVerifyPara, IN DWORD dwSignerIndex, IN const BYTE *pbSignedBlob, IN DWORD cbSignedBlob, OUT BYTE OPTIONAL *pbDecoded, IN OUT OPTIONAL DWORD *pcbDecoded, OUT OPTIONAL PCCERT_CONTEXT *ppSignerCert);
+WINAPI WINCRYPT32API BOOL CryptVerifyMessageHash(IN PCRYPT_HASH_MESSAGE_PARA pHashPara, IN BYTE *pbHashedBlob, IN DWORD cbHashedBlob, OUT OPTIONAL BYTE *pbToBeHashed, IN OUT OPTIONAL DWORD *pcbToBeHashed, OUT OPTIONAL BYTE *pbComputedHash, IN OUT OPTIONAL DWORD *pcbComputedHash);
+WINAPI WINCRYPT32API BOOL CryptHashMessage(IN PCRYPT_HASH_MESSAGE_PARA pHashPara, IN BOOL fDetachedHash, IN DWORD cToBeHashed, IN const BYTE *rgpbToBeHashed[], IN DWORD rgcbToBeHashed[], OUT OPTIONAL BYTE *pbHashedBlob, IN OUT OPTIONAL DWORD *pcbHashedBlob, OUT OPTIONAL BYTE *pbComputedHash, IN OUT OPTIONAL DWORD *pcbComputedHash);
+WINAPI WINCRYPT32API LONG CryptGetMessageSignerCount(IN DWORD dwMsgEncodingType, IN const BYTE *pbSignedBlob, IN DWORD cbSignedBlob);
+WINAPI WINCRYPT32API BOOL CryptVerifyDetachedMessageHash(IN PCRYPT_HASH_MESSAGE_PARA pHashPara, IN BYTE *pbDetachedHashBlob, IN DWORD cbDetachedHashBlob, IN DWORD cToBeHashed, IN const BYTE *rgpbToBeHashed[], IN DWORD rgcbToBeHashed[], OUT OPTIONAL BYTE *pbComputedHash, IN OUT OPTIONAL DWORD *pcbComputedHash);
+WINAPI WINCRYPT32API HCERTSTORE CryptGetMessageCertificates(IN DWORD dwMsgAndCertEncodingType, IN HCRYPTPROV hCryptProv, IN DWORD dwFlags, IN const BYTE *pbSignedBlob, IN DWORD cbSignedBlob);
+WINAPI WINCRYPT32API BOOL CryptSignAndEncryptMessage(IN PCRYPT_SIGN_MESSAGE_PARA pSignPara, IN PCRYPT_ENCRYPT_MESSAGE_PARA pEncryptPara, IN DWORD cRecipientCert, IN PCCERT_CONTEXT rgpRecipientCert[], IN const BYTE *pbToBeSignedAndEncrypted, IN DWORD cbToBeSignedAndEncrypted, OUT BYTE *pbSignedAndEncryptedBlob, IN OUT DWORD *pcbSignedAndEncryptedBlob);
+WINAPI WINCRYPT32API BOOL CryptDecryptMessage(IN PCRYPT_DECRYPT_MESSAGE_PARA pDecryptPara, IN const BYTE *pbEncryptedBlob, IN DWORD cbEncryptedBlob, OUT OPTIONAL BYTE *pbDecrypted, IN OUT OPTIONAL DWORD *pcbDecrypted, OUT OPTIONAL PCCERT_CONTEXT *ppXchgCert);
+WINAPI WINCRYPT32API BOOL CryptDecodeMessage(IN DWORD dwMsgTypeFlags, IN PCRYPT_DECRYPT_MESSAGE_PARA pDecryptPara, IN PCRYPT_VERIFY_MESSAGE_PARA pVerifyPara, IN DWORD dwSignerIndex, IN const BYTE *pbEncodedBlob, IN DWORD cbEncodedBlob, IN DWORD dwPrevInnerContentType, OUT OPTIONAL DWORD *pdwMsgType, OUT OPTIONAL DWORD *pdwInnerContentType, OUT OPTIONAL BYTE *pbDecoded, IN OUT OPTIONAL DWORD *pcbDecoded, OUT OPTIONAL PCCERT_CONTEXT *ppXchgCert, OUT OPTIONAL PCCERT_CONTEXT *ppSignerCert);
+WINAPI WINCRYPT32API BOOL CryptSignMessageWithKey(IN PCRYPT_KEY_SIGN_MESSAGE_PARA pSignPara, IN const BYTE *pbToBeSigned, IN DWORD cbToBeSigned, OUT BYTE *pbSignedBlob, IN OUT DWORD *pcbSignedBlob);
+WINAPI WINCRYPT32API BOOL CryptVerifyDetachedMessageSignature(IN PCRYPT_VERIFY_MESSAGE_PARA pVerifyPara, IN DWORD dwSignerIndex, IN const BYTE *pbDetachedSignBlob, IN DWORD cbDetachedSignBlob, IN DWORD cToBeSigned, IN const BYTE *rgpbToBeSigned[], IN DWORD rgcbToBeSigned[], OUT OPTIONAL PCCERT_CONTEXT *ppSignerCert);
+
+/Users/daeken/Desktop/Documentation/Include/MMSystem.h:
+WINAPI DWORD waveOutMessage(HWAVEOUT hwo, UINT uMsg, DWORD dw1, DWORD dw2);
+WINAPI DWORD midiOutMessage(HMIDIOUT hmo, UINT uMsg, DWORD dw1, DWORD dw2);
+WINAPI DWORD midiInMessage(HMIDIIN hmi, UINT uMsg, DWORD dw1, DWORD dw2);
+WINAPI DWORD waveInMessage(HWAVEIN hwi, UINT uMsg, DWORD dw1, DWORD dw2);
+WINAPI DWORD auxOutMessage(UINT uDeviceID, UINT uMsg, DWORD dw1, DWORD dw2);
+WINAPI LRESULT mmioSendMessage(IN HMMIO hmmio, IN UINT uMsg, IN LPARAM lParam1, IN LPARAM lParam2);
+WINAPI DWORD mixerMessage(IN HMIXER hmx, IN UINT uMsg, IN DWORD_PTR dwParam1, IN DWORD_PTR dwParam2);
+WINAPI LRESULT SendDriverMessage(IN HDRVR hDriver, IN UINT message, IN LPARAM lParam1, IN LPARAM lParam2);
+WINAPI LRESULT DrvSendMessage(HDRVR hdrvr, UINT uMsg, LPARAM lParam1, LPARAM lParam2);
+
+/Users/daeken/Desktop/Documentation/Include/WS2spi.h:
+BOOL WSPAPI WPUPostMessage(IN HWND hWnd, IN UINT Msg, IN WPARAM wParam, IN LPARAM lParam);
+
+/Users/daeken/Desktop/Documentation/Include/Mq.h:
+HRESULT APIENTRY MQReceiveMessage(IN QUEUEHANDLE hSource, IN DWORD dwTimeout, IN DWORD dwAction, IN OUT MQMSGPROPS* pMessageProps, IN OUT LPOVERLAPPED lpOverlapped, IN PMQRECEIVECALLBACK fnReceiveCallback, IN HANDLE hCursor, IN ITransaction* pTransaction);
+HRESULT APIENTRY MQReceiveMessageByLookupId(IN QUEUEHANDLE hSource, IN ULONGLONG ullLookupId, IN DWORD dwLookupAction, IN OUT MQMSGPROPS* pMessageProps, IN OUT LPOVERLAPPED lpOverlapped, IN PMQRECEIVECALLBACK fnReceiveCallback, IN ITransaction *pTransaction);
+HRESULT APIENTRY MQSendMessage(IN QUEUEHANDLE hDestinationQueue, IN MQMSGPROPS* pMessageProps, IN ITransaction *pTransaction);
+
+/Users/daeken/Desktop/Documentation/Include/emostore.h:
+HRESULT STDMETHODCALLTYPE IExchangeServer_get_MessageTrackingEnabled_Proxy(IExchangeServer __RPC_FAR * This, VARIANT_BOOL __RPC_FAR *pMessageTrackingEnabled);
+void __RPC_STUB IExchangeServer_put_MessageTrackingEnabled_Stub(IRpcStubBuffer *This, IRpcChannelBuffer *_pRpcChannelBuffer, PRPC_MESSAGE _pRpcMessage, DWORD *_pdwStubPhase);
+HRESULT STDMETHODCALLTYPE IExchangeServer_put_MessageTrackingEnabled_Proxy(IExchangeServer __RPC_FAR * This, VARIANT_BOOL varMessageTrackingEnabled);
+void __RPC_STUB IExchangeServer_get_MessageTrackingEnabled_Stub(IRpcStubBuffer *This, IRpcChannelBuffer *_pRpcChannelBuffer, PRPC_MESSAGE _pRpcMessage, DWORD *_pdwStubPhase);
+
+/Users/daeken/Desktop/Documentation/Include/WinWlx.h:
+WINAPI BOOL WlxDisplayStatusMessage(PVOID pWlxContext, HDESK hDesktop, DWORD dwOptions, PWSTR pTitle, PWSTR pMessage);
+WINAPI BOOL WlxGetStatusMessage(PVOID pWlxContext, DWORD * pdwOptions, PWSTR pMessage, DWORD dwBufferSize);
+WINAPI BOOL WlxRemoveStatusMessage(PVOID pWlxContext);
+
+/Users/daeken/Desktop/Documentation/Include/WinUser.h:
+WINAPI LRESULT SendMessageW(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI LONG GetMessageTime();
+WINAPI BOOL ReplyMessage(__in LRESULT lResult);
+WINAPI LPARAM SetMessageExtraInfo(__in LPARAM lParam);
+WINAPI LRESULT SendDlgItemMessageA(__in HWND hDlg, __in int nIDDlgItem, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI LRESULT SendDlgItemMessageW(__in HWND hDlg, __in int nIDDlgItem, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI LRESULT SendMessageTimeoutW(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam, __in UINT fuFlags, __in UINT uTimeout, __out_opt PDWORD_PTR lpdwResult);
+WINAPI DWORD GetMessagePos();
+WINAPI BOOL InSendMessage();
+__inline BOOL GetMessage(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax ) WINUSERAPI BOOL WINAPI TranslateMessage( __in CONST MSG *lpMsg);
+WINAPI long BroadcastSystemMessage(__in DWORD flags, __inout_opt LPDWORD lpInfo, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI long BroadcastSystemMessageW(__in DWORD flags, __inout_opt LPDWORD lpInfo, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI DWORD InSendMessageEx(__reserved LPVOID lpReserved);
+WINAPI int MessageBoxExW(__in_opt HWND hWnd, __in_opt LPCWSTR lpText, __in_opt LPCWSTR lpCaption, __in UINT uType, __in WORD wLanguageId);
+WINAPI BOOL GetMessageW(__out LPMSG lpMsg, __in_opt HWND hWnd, __in UINT wMsgFilterMin, __in UINT wMsgFilterMax);
+__inline LRESULT SendMessage(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam ) WINUSERAPI LRESULT WINAPI SendMessageTimeoutA( __in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam, __in UINT fuFlags, __in UINT uTimeout, __out_opt PDWORD_PTR lpdwResult);
+WINAPI long BroadcastSystemMessageExW(__in DWORD flags, __inout_opt LPDWORD lpInfo, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam, __out_opt PBSMINFO pbsmInfo);
+WINAPI LRESULT SendMessageA(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI BOOL PeekMessageA(__out LPMSG lpMsg, __in_opt HWND hWnd, __in UINT wMsgFilterMin, __in UINT wMsgFilterMax, __in UINT wRemoveMsg);
+WINAPI LPARAM GetMessageExtraInfo();
+WINAPI BOOL MessageBeep(__in UINT uType);
+__inline LRESULT DispatchMessage(CONST MSG *lpMsg ) WINUSERAPI BOOL WINAPI SetMessageQueue( __in int cMessagesMax);
+WINAPI BOOL SendNotifyMessageA(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI BOOL SendNotifyMessageW(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI long BroadcastSystemMessageA(__in DWORD flags, __inout_opt LPDWORD lpInfo, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+__inline int MessageBox(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption, UINT uType ) WINUSERAPI int WINAPI MessageBoxExA( __in_opt HWND hWnd, __in_opt LPCSTR lpText, __in_opt LPCSTR lpCaption, __in UINT uType, __in WORD wLanguageId);
+WINAPI BOOL PostThreadMessageW(__in DWORD idThread, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI BOOL PostThreadMessageA(__in DWORD idThread, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI LRESULT DispatchMessageA(__in CONST MSG *lpMsg);
+WINAPI LRESULT DispatchMessageW(__in CONST MSG *lpMsg);
+WINAPI BOOL PeekMessageW(__out LPMSG lpMsg, __in_opt HWND hWnd, __in UINT wMsgFilterMin, __in UINT wMsgFilterMax, __in UINT wRemoveMsg);
+WINAPI BOOL SendMessageCallbackA(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam, __in SENDASYNCPROC lpResultCallBack, __in ULONG_PTR dwData);
+WINAPI BOOL SendMessageCallbackW(__in HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam, __in SENDASYNCPROC lpResultCallBack, __in ULONG_PTR dwData);
+WINAPI UINT RegisterWindowMessageW(__in LPCWSTR lpString);
+WINAPI int MessageBoxW(__in_opt HWND hWnd, __in_opt LPCWSTR lpText, __in_opt LPCWSTR lpCaption, __in UINT uType);
+WINAPI int MessageBoxA(__in_opt HWND hWnd, __in_opt LPCSTR lpText, __in_opt LPCSTR lpCaption, __in UINT uType);
+WINAPI BOOL PostMessageA(__in_opt HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI BOOL PostMessageW(__in_opt HWND hWnd, __in UINT Msg, __in WPARAM wParam, __in LPARAM lParam);
+WINAPI BOOL WaitMessage();
+WINAPI int MessageBoxIndirectA(__in CONST MSGBOXPARAMSA * lpmbp);
+WINAPI int MessageBoxIndirectW(__in CONST MSGBOXPARAMSW * lpmbp);
+WINAPI BOOL IsWow64Message();
+WINAPI VOID PostQuitMessage(__in int nExitCode);
+WINAPI BOOL IsDialogMessageW(__in HWND hDlg, __in LPMSG lpMsg);
+WINAPI BOOL IsDialogMessageA(__in HWND hDlg, __in LPMSG lpMsg);
+
+/Users/daeken/Desktop/Documentation/Include/NetSh.h:
+DWORD PrintMessage(IN LPCWSTR pwszFormat, ...);
+DWORD PrintMessageFromModule(IN HANDLE hModule, IN DWORD dwMsgId, ...);
+
+/Users/daeken/Desktop/Documentation/Include/AdsProp.h:
+STDAPI_(BOOL) ADsPropSendErrorMessage(HWND hNotifyObj, PADSPROPERROR pError);
+
+/Users/daeken/Desktop/Documentation/Include/Mprapi.h:
+DWORD APIENTRY MprAdminSendUserMessage(IN MPR_SERVER_HANDLE hMprServer, IN HANDLE hConnection, IN LPWSTR lpwszMessage);
+
+/Users/daeken/Desktop/Documentation/Include/Evntrace.h:
+EXTERN_C ULONG TraceMessageVa(__in TRACEHANDLE LoggerHandle, __in ULONG MessageFlags, __in LPGUID MessageGuid, __in USHORT MessageNumber, __in va_list MessageArgList);
+EXTERN_C ULONG __cdecl TraceMessage(__in TRACEHANDLE LoggerHandle, __in ULONG MessageFlags, __in LPGUID MessageGuid, __in USHORT MessageNumber, ...);
+
+/Users/daeken/Desktop/Documentation/Include/WtsApi32.h:
+WINAPI BOOL WTSSendMessageA(IN HANDLE hServer, IN DWORD SessionId, IN LPSTR pTitle, IN DWORD TitleLength, IN LPSTR pMessage, IN DWORD MessageLength, IN DWORD Style, IN DWORD Timeout, OUT DWORD * pResponse, IN BOOL bWait);
+WINAPI BOOL WTSSendMessageW(IN HANDLE hServer, IN DWORD SessionId, IN LPWSTR pTitle, IN DWORD TitleLength, IN LPWSTR pMessage, IN DWORD MessageLength, IN DWORD Style, IN DWORD Timeout, OUT DWORD * pResponse, IN BOOL bWait);
+
+/Users/daeken/Desktop/Documentation/Include/Ime.h:
+WINAPI LRESULT SendIMEMessageExA(IN HWND, IN LPARAM);
+WINAPI LRESULT SendIMEMessageExW(IN HWND, IN LPARAM);
+
+/Users/daeken/Desktop/Documentation/Include/WinBase.h:
+__inline DWORD FormatMessage(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPTSTR lpBuffer, DWORD nSize, va_list *Arguments ) WINBASEAPI BOOL WINAPI CreatePipe( __out_ecount_full(1) PHANDLE hReadPipe, __out_ecount_full(1) PHANDLE hWritePipe, __in_opt LPSECURITY_ATTRIBUTES lpPipeAttributes, __in DWORD nSize);
+WINAPI BOOL SetMessageWaitingIndicator(__in HANDLE hMsgIndicator, __in ULONG ulMsgCount);
+WINAPI DWORD FormatMessageW(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPWSTR lpBuffer, DWORD nSize, va_list *Arguments);
+WINAPI DWORD FormatMessageA(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPSTR lpBuffer, DWORD nSize, va_list *Arguments);
+

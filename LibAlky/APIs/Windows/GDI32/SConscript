@@ -1,0 +1,12 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static', 'NuGUI_static']
+if 'darwin' in sys.platform:
+    frameworks = ['OpenGL', 'SDL']
+else:
+    frameworks = ['GL', 'SDL']
+AlkyLib('gdi32', ['Device.c', 'DIB.c', 'Font.c', 'GDI32.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

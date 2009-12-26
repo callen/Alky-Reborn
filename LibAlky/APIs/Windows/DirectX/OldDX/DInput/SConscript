@@ -1,0 +1,11 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static', 'NuCore_static', 'NuGUI_static', 'COM_static']
+
+frameworks = ['SDL']
+
+AlkyLib('dinput', ['DInput.c'], FRAMEWORKS=frameworks, LIBS=libs)
+AlkyLib('dinput8', ['DInput.c'], FRAMEWORKS=frameworks, LIBS=libs)

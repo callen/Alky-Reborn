@@ -1,0 +1,12 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = []
+if 'darwin' in sys.platform:
+    frameworks = ['OpenGL']
+else:
+    frameworks = ['GLU']
+AlkyLib('glu32', ['GLU32.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

@@ -1,0 +1,17 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+import sys
+sys.path.append('../../')
+
+import scons_util
+
+SConscript(
+	[
+		'Nucleus/SConscript',
+		'APIs/SConscript',
+	]
+)
+
+env = Environment()
+env.Alias('install', 'Build')

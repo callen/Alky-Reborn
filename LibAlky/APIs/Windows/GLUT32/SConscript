@@ -1,0 +1,13 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+import sys
+
+libs = []
+if 'darwin' in sys.platform:
+    frameworks = ['GLUT']
+else:
+    frameworks = ['glut']
+AlkyLib('glut32', ['GLUT32.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

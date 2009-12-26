@@ -1,0 +1,17 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static', 'NuCore_static', 'NuFile_static', 'NuGUI_static', 'COM_static', 'd3d9_static']
+
+if 'darwin' in sys.platform:
+    frameworks = ['OpenGL', 'SDL']
+else:
+    frameworks = ['GL', 'SDL']
+
+files = ['D3DX.c', 'Buffer.c', 'ConstantTable.c', 'Math.c', 'Shader.c', 'Texture.c']
+
+AlkyLib('d3dx9', files, FRAMEWORKS=frameworks, LIBS=libs)
+AlkyLib('d3dx9_27', files, FRAMEWORKS=frameworks, LIBS=libs)
+AlkyLib('d3dx9_31', files, FRAMEWORKS=frameworks, LIBS=libs)

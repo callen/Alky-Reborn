@@ -1,0 +1,61 @@
+# Project: D3DX10
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = D3DX.o Effect.o ResourceView.o Mesh.o Texture.o Font.o Sprite.o Matrix.o Vector.o DDS.o $(RES)
+LINKOBJ  = D3DX.o Effect.o ResourceView.o Mesh.o Texture.o Font.o Sprite.o Matrix.o Vector.o DDS.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" --export-all-symbols --add-stdcall-alias --add-stdcall-alias --export-all-symbols -L../../../../../Nucleus/Context/-lNuContext -lopengl32 -lglu32 -mrtd -lgdi32 ../../../../../../../../../../../../WINDOWS/system32/d3d10.dll ../../../../../../../../../../../../WINDOWS/system32/Nucleus.dll --enable-auto-import  -g3 
+INCS =  -I"C:/Dev-Cpp/include"  -I"C:/Documents and Settings/Administrator.ELLIOTT/Desktop/Projects/Alky/LibAlky" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"C:/Documents and Settings/Administrator.ELLIOTT/Desktop/Projects/Alky/LibAlky" 
+BIN  = ../../../../../../../../../../../WINDOWS/system32/d3dx10_33.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1   -fexpensive-optimizations -O3 -g3
+CFLAGS = $(INCS) -DBUILDING_DLL=1 -mrtd   -fexpensive-optimizations -O3 -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../../../../../../WINDOWS/system32/d3dx10_33.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=../../../../../../../../../../../WINDOWS/system32/libd3dx10_33.def
+STATICLIB=../../../../../../../../../../../WINDOWS/system32/libd3dx10_33.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+D3DX.o: D3DX.c
+	$(CC) -c D3DX.c -o D3DX.o $(CFLAGS)
+
+Effect.o: Effect.c
+	$(CC) -c Effect.c -o Effect.o $(CFLAGS)
+
+ResourceView.o: ResourceView.c
+	$(CC) -c ResourceView.c -o ResourceView.o $(CFLAGS)
+
+Mesh.o: Mesh.c
+	$(CC) -c Mesh.c -o Mesh.o $(CFLAGS)
+
+Texture.o: Texture.c
+	$(CC) -c Texture.c -o Texture.o $(CFLAGS)
+
+Font.o: Font.c
+	$(CC) -c Font.c -o Font.o $(CFLAGS)
+
+Sprite.o: Sprite.c
+	$(CC) -c Sprite.c -o Sprite.o $(CFLAGS)
+
+Matrix.o: Matrix.c
+	$(CC) -c Matrix.c -o Matrix.o $(CFLAGS)
+
+Vector.o: Vector.c
+	$(CC) -c Vector.c -o Vector.o $(CFLAGS)
+
+DDS.o: DDS.c
+	$(CC) -c DDS.c -o DDS.o $(CFLAGS)

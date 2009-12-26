@@ -1,0 +1,6 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import env
+
+env.Program('TestCore', ['TestCore.c'], LIBS=['NuCore_static'], LIBPATH='../')

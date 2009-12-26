@@ -1,0 +1,13 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static', 'kernel32_static', 'NuGUI_static']
+if 'darwin' in sys.platform:
+    frameworks = ['OpenGL', 'SDL']
+else:
+    frameworks = ['GL', 'SDL']
+
+AlkyLib('winmm', ['WinMM.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

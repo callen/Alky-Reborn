@@ -1,0 +1,9 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = []
+
+AlkyLib('iphlpapi', ['IPHlpApi.c', ], LIBS=libs)
+# AlkyTest('Test')

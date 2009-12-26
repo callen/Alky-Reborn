@@ -1,0 +1,46 @@
+# Project: DXGI
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = DXGI.o SwapChain.o Factory.o Adapter.o Output.o $(RES)
+LINKOBJ  = DXGI.o SwapChain.o Factory.o Adapter.o Output.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" --export-all-symbols --add-stdcall-alias -L../../../../../Nucleus/Context/ -lNuContext -lopengl32 -lglu32 -mrtd -lgdi32 ../../../../../../../../../../../../WINDOWS/system32/d3d10.dll ../../../../../../../../../../../../WINDOWS/system32/Nucleus.dll  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ../../../../../../../../../../../WINDOWS/system32/dxgi.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1   -g3
+CFLAGS = $(INCS) -DBUILDING_DLL=1 -mrtd   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../../../../../../WINDOWS/system32/dxgi.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=../../../../../../../../../../../WINDOWS/system32/libdxgi.def
+STATICLIB=../../../../../../../../../../../WINDOWS/system32/libdxgi.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+DXGI.o: DXGI.c
+	$(CC) -c DXGI.c -o DXGI.o $(CFLAGS)
+
+SwapChain.o: SwapChain.c
+	$(CC) -c SwapChain.c -o SwapChain.o $(CFLAGS)
+
+Factory.o: Factory.c
+	$(CC) -c Factory.c -o Factory.o $(CFLAGS)
+
+Adapter.o: Adapter.c
+	$(CC) -c Adapter.c -o Adapter.o $(CFLAGS)
+
+Output.o: Output.c
+	$(CC) -c Output.c -o Output.o $(CFLAGS)

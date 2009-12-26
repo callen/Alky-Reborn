@@ -1,0 +1,8 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+AlkyLib('NuContext', ['Context.c'])
+
+# AlkyTest('Test')

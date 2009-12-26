@@ -1,0 +1,15 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+import sys
+
+libs = ['NuContext', 'NuMemory_static', 'NuCore_static']
+
+if sys.platform == 'darwin':
+	frameworks = ['OpenAL']
+else:
+	frameworks = []
+	libs.append('openal')
+AlkyLib('openal32', ['OpenAL32.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

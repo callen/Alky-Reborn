@@ -1,0 +1,16 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+SConscript(
+	[
+		'Context/SConscript',
+		'Core/SConscript',
+		'Event/SConscript',
+		'File/SConscript',
+		'GUI/SConscript',
+		'Memory/SConscript',
+		'Process/SConscript',
+		'Render/SConscript',
+		'Thread/SConscript',
+	]
+)

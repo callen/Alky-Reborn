@@ -1,0 +1,30 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+import sys
+
+libs = [
+    'NuContext', 'NuCore_static',
+    'NuMemory_static', 'NuEvent_static',
+    'NuFile_static', 'NuGUI_static',
+    'NuProcess_static', 'NuThread_static',
+    'wincore_static'
+]
+
+if not 'darwin' in sys.platform:
+	libs.append('pthread')
+
+frameworks = ['SDL']
+source = [
+	'Kernel32.c', 'Memory.c', 'Misc.c',
+	'Debug.c',
+	'Error.c', 'Event.c', 'Exception.c',
+	'File.c', 'Mutex.c', 'Module.c',
+	'Process.c', 'SEH.c', 'Thread.c',
+	'Time.c', 'Timer.c', 'TLS.c',
+	'Unicode.c'
+]
+
+AlkyLib('kernel32', source, FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

@@ -1,0 +1,9 @@
+# Copyright 2006 Falling Leaf Systems, LLC.
+# Refer to LICENSE in the root directory.
+
+from scons_util import *
+
+libs = ['NuContext', 'NuMemory_static']
+frameworks = []
+AlkyLib('shell32', ['Shell32.c'], FRAMEWORKS=frameworks, LIBS=libs)
+# AlkyTest('Test')

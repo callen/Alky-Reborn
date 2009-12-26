@@ -1,0 +1,67 @@
+# Project: Direct3D10
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = D3D.o Device.o Effect.o EffectPass.o EffectTechnique.o Texture.o EffectVariable.o EffectMatrixVariable.o EffectVectorVariable.o EffectShaderResourceVariable.o ShaderResourceView.o StateBlock.o $(RES)
+LINKOBJ  = D3D.o Device.o Effect.o EffectPass.o EffectTechnique.o Texture.o EffectVariable.o EffectMatrixVariable.o EffectVectorVariable.o EffectShaderResourceVariable.o ShaderResourceView.o StateBlock.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -L../../../../../Nucleus/Context/ -lNuContext -lopengl32 -lglu32 -luser32 -lgdi32 --export-all-symbols --add-stdcall-alias -mrtd ../../../../../../../../../../../../../../../WINDOWS/system32/dxgi.dll ../../../../../../../../../../../../WINDOWS/system32/Nucleus.dll  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ../../../../../../../../../../../WINDOWS/system32/d3d10.dll
+CXXFLAGS = $(CXXINCS) -DBUILDING_DLL=1   -fexpensive-optimizations -O3 -g3
+CFLAGS = $(INCS) -DBUILDING_DLL=1 -DWIN32 -mrtd   -fexpensive-optimizations -O3 -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ../../../../../../../../../../../WINDOWS/system32/d3d10.dll all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+DLLWRAP=dllwrap.exe
+DEFFILE=../../../../../../../../../../../WINDOWS/system32/libd3d10.def
+STATICLIB=../../../../../../../../../../../WINDOWS/system32/libd3d10.a
+
+$(BIN): $(LINKOBJ)
+	$(DLLWRAP) --output-def $(DEFFILE) --implib $(STATICLIB) $(LINKOBJ) $(LIBS) -o $(BIN)
+
+D3D.o: D3D.c
+	$(CC) -c D3D.c -o D3D.o $(CFLAGS)
+
+Device.o: Device.c
+	$(CC) -c Device.c -o Device.o $(CFLAGS)
+
+Effect.o: Effect.c
+	$(CC) -c Effect.c -o Effect.o $(CFLAGS)
+
+EffectPass.o: EffectPass.c
+	$(CC) -c EffectPass.c -o EffectPass.o $(CFLAGS)
+
+EffectTechnique.o: EffectTechnique.c
+	$(CC) -c EffectTechnique.c -o EffectTechnique.o $(CFLAGS)
+
+Texture.o: Texture.c
+	$(CC) -c Texture.c -o Texture.o $(CFLAGS)
+
+EffectVariable.o: EffectVariable.c
+	$(CC) -c EffectVariable.c -o EffectVariable.o $(CFLAGS)
+
+EffectMatrixVariable.o: EffectMatrixVariable.c
+	$(CC) -c EffectMatrixVariable.c -o EffectMatrixVariable.o $(CFLAGS)
+
+EffectVectorVariable.o: EffectVectorVariable.c
+	$(CC) -c EffectVectorVariable.c -o EffectVectorVariable.o $(CFLAGS)
+
+EffectShaderResourceVariable.o: EffectShaderResourceVariable.c
+	$(CC) -c EffectShaderResourceVariable.c -o EffectShaderResourceVariable.o $(CFLAGS)
+
+ShaderResourceView.o: ShaderResourceView.c
+	$(CC) -c ShaderResourceView.c -o ShaderResourceView.o $(CFLAGS)
+
+StateBlock.o: StateBlock.c
+	$(CC) -c StateBlock.c -o StateBlock.o $(CFLAGS)
